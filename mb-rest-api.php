@@ -97,7 +97,7 @@ class MB_Rest_API {
 				$new = RWMB_Field::call( $field, 'value', $new, $old, $object->ID );
 				$new = RWMB_Field::filter( 'sanitize', $new, $field );
 			}
-			$new = RWMB_Field::filter( 'value', $new, $field, $old );
+			$new = RWMB_Field::filter( 'rest_value', $new, $field, $old, $object->ID );
 
 			// Call defined method to save meta value, if there's no methods, call common one.
 			RWMB_Field::call( $field, 'save', $new, $old, $object->ID );
